@@ -24,7 +24,7 @@ public class LoginTest {
         //System.setProperty("webdriver.chrome.driver", "C:\\workspace\\chromedriver.exe");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
 
@@ -37,18 +37,17 @@ public class LoginTest {
         System.out.println(driver.getTitle());
         String textlogIn = "Dashboard | My Store";
         wait.until(titleIs(textlogIn));
-        driver.findElement(By.xpath("//*[@id=\"top-bar\"]/li[10]/a")).click();
+        driver.navigate().refresh();
+       driver.findElement(By.xpath("//a[@title='Logout']")).click();
         System.out.println(driver.getTitle());
         String textLogOut = "My Store";
         wait.until(titleIs(textLogOut));
+
     }
 
-
-
-
-    @After
-  public void stop(){
-       driver.quit();
-       driver = null;
+  @After
+   public void stop(){
+     driver.quit();
+      driver = null;
    }
 }
