@@ -29,18 +29,15 @@ public class LoginTest {
 
 
     @Test
-    public void MyFirstTest()   {
+    public void HWLoginTest()   {
         driver.get("http://localhost/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
-        //driver.findElement(B)
-        //driver.findElement((By.cssSelector("button")).);
         driver.findElement(By.cssSelector("button")).click();
         System.out.println(driver.getTitle());
         String textlogIn = "Dashboard | My Store";
         wait.until(titleIs(textlogIn));
-        WebElement classLogOut = driver.findElement(By.xpath("//a[@href='http://localhost/litecart/admin/logout.php']"));
-        classLogOut.click();
+        driver.findElement(By.xpath("//*[@id=\"top-bar\"]/li[10]/a")).click();
         System.out.println(driver.getTitle());
         String textLogOut = "My Store";
         wait.until(titleIs(textLogOut));
@@ -49,9 +46,9 @@ public class LoginTest {
 
 
 
-//   // @After
-//   // public void stop(){
-//        driver.quit();
-//        driver = null;
-//    }
+    @After
+  public void stop(){
+       driver.quit();
+       driver = null;
+   }
 }
