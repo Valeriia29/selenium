@@ -60,11 +60,6 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
         }
 
-/*    @Test
-        public void MyFirstTest(){
-        driver.get("https://yandex.ru/");
-        driver.get("https://www.youtube.com/");
-    }*/
 
 
         @After
