@@ -30,7 +30,7 @@ public class LoginTest {
 
     @Test
     public void HWLoginTest()   {
-        driver.get("http://localhost/litecart/admin/");
+        driver.get("http://localhost:8090/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
         driver.findElement(By.cssSelector("button")).click();
